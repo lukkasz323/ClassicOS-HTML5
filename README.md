@@ -1,6 +1,3 @@
-# ClassicOS-HTML5
-Windows 98 stylized OS attempt in HTML5
-
 # MIT License
 
 Copyright (c) 2022 lukkasz323
