@@ -1,0 +1,9 @@
+html, body {
+    margin: auto;
+    overflow: hidden;
+}
+
+canvas {
+    background-color: #008080;
+    position: absolute;
+}
