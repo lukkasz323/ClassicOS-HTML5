@@ -4,6 +4,7 @@ html, body {
 }
 
 canvas {
-    background-color: #008080;
     position: absolute;
+    left: 30%;
+    top: 20%;
 }

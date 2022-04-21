@@ -1,6 +1,6 @@
 'use strict';
 
-const canvas = document.querySelector('canvas');
+const canvas = document.getElementById('canvas-os');
 const context = canvas.getContext('2d', {alpha: false});
 
 const WIDTH = canvas.width;
@@ -13,34 +13,28 @@ function draw() {
     context.fillRect(0, 0, WIDTH, HEIGHT)
     // Task bar
     context.fillStyle = 'gray';
-    context.fillRect(0, HEIGHT - 64, WIDTH, 64)
+    context.fillRect(0, HEIGHT - 32, WIDTH, 32)
 }
 
 draw();
 
 // Element drag
 let isDragging = false;
-let pos1 = 0;
-let pos2 = 0;
 
 function logMouseDown(e) {
     isDragging = true;
-    console.log(e);
 }
 
 function logMouseUp(e) {
     isDragging = false;
-    console.log(e);
 }
 
 function logMouseMove(e) {
     if (isDragging) {
         const el = e.target;
 
-        let posX = el.offsetLeft - (pos1 - e.clientX);
-        let posY = el.offsetTop - (pos2 - e.clientY);
-        pos1 = e.clientX;
-        pos2 = e.clientY;
+        let posX = e.clientX - (el.offsetLeft / 2);
+        let posY = e.clientY - (el.offsetTop / 2);
 
         el.style.left = posX + 'px';
         el.style.top = posY + 'px';
